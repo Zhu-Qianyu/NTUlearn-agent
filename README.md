@@ -1,5 +1,6 @@
 # ntl-mcp
 
+![sample](sample1.png)
 Independent MCP server for **NTULearn** (NTU Singapore’s Blackboard Learn instance). It talks to the public Blackboard REST API over your own session cookie.
 
 
