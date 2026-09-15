@@ -2,7 +2,6 @@
 
 Independent MCP server for **NTULearn** (NTU Singapore’s Blackboard Learn instance). It talks to the public Blackboard REST API over your own session cookie.
 
-This is **not** a fork of any other NTULearn MCP. It is not affiliated with, endorsed by, or sponsored by NTU Singapore, Anthology, or Blackboard.
 
 ## What it does
 
