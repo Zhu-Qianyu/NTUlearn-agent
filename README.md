@@ -79,6 +79,21 @@ Optional env:
 | `NTULEARN_DOWNLOAD_DIR` | Default download root (otherwise `~/NTULearn/courses`) |
 | `NTULEARN_BASE_URL` | Unused by most students; API host is NTULearn |
 
+## Cursor skill: quiz handbook (配图版)
+
+Project skill: `.cursor/skills/ntu-quiz-handbook/`.
+
+It lists upcoming NTULearn quizzes, asks which paper to prepare (skipped if you already named it), then builds a tutor-style **Word + PDF** handbook with slide screenshots.
+
+```bash
+python .cursor/skills/ntu-quiz-handbook/scripts/list_exams.py --until-days 120
+python .cursor/skills/ntu-quiz-handbook/scripts/render_slides.py --pdf LECTURE.pdf --code W1 --pages 3,6 --out slide_snaps
+node .cursor/skills/ntu-quiz-handbook/scripts/build_handbook.js outline.json
+python .cursor/skills/ntu-quiz-handbook/scripts/export_pdf.py HANDBOOK.docx
+```
+
+Handbooks themselves stay in `NTULEARN_DOWNLOAD_DIR/<course>/quizN/` and are not committed.
+
 ## Tools
 
 `ntl_list_courses`, `ntl_get_course_contents`, `ntl_search_course_content`, `ntl_get_announcements`, `ntl_get_upcoming`, `ntl_get_gradebook`, `ntl_download_file`, `ntl_read_file_content`.

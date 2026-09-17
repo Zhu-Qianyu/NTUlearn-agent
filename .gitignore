@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.python-version
+.env
+.env.*
+.ntl-cookie
+courses/
+*.zip
+.DS_Store
+Thumbs.db
+node_modules/

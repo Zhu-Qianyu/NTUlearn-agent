@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NTU quiz handbook outline",
+  "type": "object",
+  "required": ["course", "exam", "meta", "sections"],
+  "properties": {
+    "out": { "type": "string", "description": "Output .docx path. Default: <work>/COURSE_Exam_备考手册_配图版.docx" },
+    "slidesDir": { "type": "string", "description": "Directory with slide_snaps/meta.json. Default: sibling slide_snaps/" },
+    "course": { "type": "string" },
+    "exam": { "type": "string" },
+    "tagline": { "type": "string" },
+    "meta": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": { "type": "string" }
+      }
+    },
+    "howto": { "type": "array", "items": { "type": "string" } },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "blocks"],
+        "properties": {
+          "title": { "type": "string" },
+          "blocks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["type"],
+              "properties": {
+                "type": {
+                  "enum": ["h2", "h3", "p", "src", "bullets", "formula", "table", "callout", "note", "slide"]
+                },
+                "text": { "type": "string" },
+                "items": { "type": "array", "items": { "type": "string" } },
+                "headers": { "type": "array", "items": { "type": "string" } },
+                "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } },
+                "widths": { "type": "array", "items": { "type": "integer" } },
+                "title": { "type": "string" },
+                "lines": { "type": "array", "items": { "type": "string" } },
+                "code": { "type": "string" },
+                "page": { "type": "integer" },
+                "caption": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
